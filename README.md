@@ -19,7 +19,7 @@ The BURO BD DPD-Dashboard s a visual analysis of loans based on disbursement and
    - Make sure you have Streamlit installed. If not, install it using `pip install streamlit`.
    - Save the provided code in a Python file, e.g., `dpd_dashboard.py`.
    - Open a terminal and navigate to the directory containing the file.
-   - Run the app using the command: `streamlit run dpd_dashboard.py`.
+   - Run the app using the command: `streamlit run ./dpd_dashboard.py`.
 
 2. **Web App Interface:**
    - The app opens in your default web browser, displaying the title "Loan Analysis Web App" and a selection panel.
