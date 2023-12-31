@@ -1,5 +1,12 @@
 # BURO BD DPD-Dashboard
 
+## Progress Report
+Done:
+- WebApp development complete.
+- User Guide created
+Work Due:
+- Develop and Run test cases
+
 ## Overview
 
 The BURO BD DPD-Dashboard s a visual analysis of loans based on disbursement and due quarters, as well as the Days Past Due (DPD) metric. Users can interact with the app to explore the number of loans and DPD trends across different quarters.
