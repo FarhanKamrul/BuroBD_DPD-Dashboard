@@ -7,6 +7,7 @@ Done:
 
 Work Due:
 - Develop and Run test cases
+- Fix logical inaccuracies if any.
 
 ## Overview
 
