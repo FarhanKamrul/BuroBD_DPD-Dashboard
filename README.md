@@ -16,7 +16,7 @@ Points of contention:
 Welcome to the Buro BD DPD-Dashboard! This web application provides insights into the Disbursement and Due Performance Data (DPD) for loans. Use this guide to navigate through the features and functionalities of the dashboard.
 
 ## Getting Started
-1. **Access the Dashboard:**
+1. **Start the Dashboard:**
     - **WSL (Windows Subsystem for Linux):**
         ```bash
         streamlit run path/to/your/app/dpd_dashboard.py
@@ -25,7 +25,8 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
         ```bash
         streamlit run path/to/your/app/dpd_dashboard.py
         ```
-2. **Select DPD Filter Value:** On the sidebar, choose the DPD filter value from the radio buttons. You can select from 7, 15, 30, 60, or 90 days.
+2. **Access the Dashboard**: Paste the generated Local or Network URL on the browser address bar.
+4. **Select DPD Filter Value:** On the sidebar, choose the DPD filter value from the radio buttons. You can select from 7, 15, 30, 60, or 90 days.
 
 ## Dashboard Sections
 
