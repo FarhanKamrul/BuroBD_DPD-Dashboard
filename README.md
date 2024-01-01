@@ -1,5 +1,3 @@
-# BURO BD DPD-Dashboard
-
 ## Progress Report
 Done:
 - WebApp development complete.
@@ -12,38 +10,59 @@ Work Due:
 Points of contention:
 - Please check out the logic for calculating the ending DPD per user per quarter.
 
-## Overview
+# Buro BD DPD-Dashboard User Guide
 
-The BURO BD DPD-Dashboard s a visual analysis of loans based on disbursement and due quarters, as well as the Days Past Due (DPD) metric. Users can interact with the app to explore the number of loans and DPD trends across different quarters.
+## Introduction
+Welcome to the Buro BD DPD-Dashboard! This web application provides insights into the Disbursement and Due Performance Data (DPD) for loans. Use this guide to navigate through the features and functionalities of the dashboard.
 
-## How to Use
+## Getting Started
+1. **Access the Dashboard:**
+    - **WSL (Windows Subsystem for Linux):**
+        ```bash
+        streamlit run path/to/your/app/script.py
+        ```
+    - **Mac/Linux:**
+        ```bash
+        streamlit run path/to/your/app/script.py
+        ```
+2. **Select DPD Filter Value:** On the sidebar, choose the DPD filter value from the radio buttons. You can select from 7, 15, 30, 60, or 90 days.
 
-1. **Accessing the Web App:**
-   - Make sure you have Streamlit installed. If not, install it using `pip install streamlit`.
-   - Save the provided code in a Python file, e.g., `dpd_dashboard.py`.
-   - Open a terminal and navigate to the directory containing the file.
-   - Run the app using the command: `streamlit run ./dpd_dashboard.py`.
+## Dashboard Sections
 
-2. **Web App Interface:**
-   - The app opens in your default web browser, displaying the title "Loan Analysis Web App" and a selection panel.
+### Loans per Quarter
+- **Description:** This section provides the number of loans disbursed in each quarter of the fiscal year.
+- **Visualization:** A table with columns representing quarters (Q1 to Q4) and rows indicating the number of loans disbursed.
 
-3. **Selecting DPD Filter:**
-   - In the selection panel, you will find a radio button group labeled "Select DPD Filter." This allows you to choose predefined DPD filter values:
-     - "7+ DPD": Loans with 7 or more days past due.
-     - "30+ DPD": Loans with 30 or more days past due.
-     - "60+ DPD": Loans with 60 or more days past due.
+### DPD per Quarter
+- **Description:** This section displays the count of loans with DPD values exceeding the selected filter value in each quarter.
+- **Visualization:** A table with columns representing quarters (Q1 to Q4) and rows indicating the count of loans with DPD values above the selected threshold.
 
-4. **Viewing Results:**
-   - After selecting a DPD filter, the app automatically updates and displays a visual DataFrame. The DataFrame shows the number of loans for each quarter (Q1, Q2, Q3, Q4) based on the chosen DPD filter.
+## Using the Dashboard
+1. **Read the Data:** The data is loaded from the "DPD_Sample.xlsx" file. To use a different file, modify the file path in the script.
+    - Example:
+        ```python
+        df = pd.read_excel("path/to/your/data/file.xlsx")
+        ```
 
-5. **Submit Button:**
-   - Below the DPD filter options, you'll find a "Submit" button. Clicking this button triggers the calculation and visualization of loan data based on the selected DPD filter.
+2. **Understand Disbursement and Due Quarters:**
+   - Disbursement Quarter: Represents the quarter in which the loan was disbursed.
+   - Due Quarter: Represents the quarter in which the payment is due.
 
-6. **Exiting the App:**
-   - To exit the app, simply close the web browser or terminate the Streamlit process in the terminal.
+3. **Interpret DPD Values:**
+   - DPD (Days Past Due): Indicates the number of days a payment is overdue.
 
-## Notes
+4. **Filter DPD Data:**
+   - Use the sidebar to choose the DPD filter value. This value determines the threshold for considering loans in the DPD analysis.
 
-- Ensure that the necessary Python libraries (`streamlit` and `pandas`) are installed before running the app.
-- The app reads data from an Excel file named "DPD_Sample.xlsx." Make sure this file is present in the same directory as the app file. Or change the source code to contain the appropriate file path.
-- The app performs calculations based on the loan disbursement and due quarters, as well as the DPD metric, providing valuable insights into loan trends.
+## Example Usage
+1. Open the terminal in WSL or Mac.
+2. Navigate to the directory containing the script.
+3. Run the command to start the web app.
+4. Explore the "Loans per Quarter" section to understand the distribution of loans across quarters.
+5. Analyze the "DPD per Quarter" section to identify loans with DPD values exceeding the selected threshold in each quarter.
+
+## Additional Notes
+- The data is processed and visualized dynamically based on the selected DPD filter value.
+- Ensure the data file path is correctly specified for accurate results.
+
+Thank you for using the Buro BD DPD-Dashboard! If you have any questions or feedback, feel free to reach out to the administrator.
