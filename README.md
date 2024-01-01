@@ -13,7 +13,7 @@ Points of contention:
 # Buro BD DPD-Dashboard User Guide
 
 ## Introduction
-Welcome to the Buro BD DPD-Dashboard! This web application provides insights into the Disbursement and Due Performance Data (DPD) for loans. Use this guide to navigate through the features and functionalities of the dashboard.
+Welcome to the Buro BD DPD-Dashboard! This web application provides insights into the Disbursement and Due Past Date (DPD) for loans. Use this guide to navigate through the features and functionalities of the dashboard.
 
 ## Getting Started
 1. **Start the Dashboard:**
