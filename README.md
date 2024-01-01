@@ -65,4 +65,5 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
 - The data is processed and visualized dynamically based on the selected DPD filter value.
 - Ensure the data file path is correctly specified for accurate results.
 
-Thank you for using the Buro BD DPD-Dashboard! If you have any questions or feedback, feel free to reach out to the administrator.
+Thank you for using the Buro BD DPD-Dashboard!
+
