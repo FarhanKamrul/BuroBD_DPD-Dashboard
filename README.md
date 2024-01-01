@@ -19,11 +19,11 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
 1. **Access the Dashboard:**
     - **WSL (Windows Subsystem for Linux):**
         ```bash
-        streamlit run path/to/your/app/script.py
+        streamlit run path/to/your/app/dpd_dashboard.py
         ```
     - **Mac/Linux:**
         ```bash
-        streamlit run path/to/your/app/script.py
+        streamlit run path/to/your/app/dpd_dashboard.py
         ```
 2. **Select DPD Filter Value:** On the sidebar, choose the DPD filter value from the radio buttons. You can select from 7, 15, 30, 60, or 90 days.
 
