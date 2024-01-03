@@ -7,6 +7,7 @@
 - WebApp development complete. 🟩
 - User Guide created. 🟩
 - Logical inaccuracies handled according to feedback, needs review. 🟨
+  - Calculating Due Quarter using max realizable date and report date, what does this mean? Do we include the latter date as the date when it is to be due? 🟨
 - Testing feature accuracies 🟨
   - ```testcase1.xlsx``` assumes all loans are unique (using unique itemcodes for each). 🟩
   - Test *clumping*, i.e., the same loanee making multiple deposits on the same loan. 🟨
