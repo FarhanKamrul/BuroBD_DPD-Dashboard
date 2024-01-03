@@ -165,9 +165,10 @@ def load_and_preprocess_data(file_path):
 
 def main():
     # Set up streamlit dashboard page
+    image = "logo.png"
     st.set_page_config(
         page_title = "Vintage Analysis Dashboard FY22-23",
-        page_icon = ":chart_with_upwards_trend:",
+        page_icon = image,
         layout = "wide",
     )
     st.title(":gray[Vintage Analysis Dashboard FY22-23] :chart_with_upwards_trend:")
