@@ -7,17 +7,13 @@
 - WebApp development complete. 🟩
 - User Guide created. 🟩
 - Logical inaccuracies handled according to feedback, needs review. 🟨
-- Test Cases 🟩
-
-Running the ```testcase1.xlsx``` should render the following table.
-
-| Disburse Period | Number of Loans | Q1 | Q2 | Q3 | Q4 |
-|-----------------|-----------------|----|----|----|----|
-| Q1-FY22-23      | 24             | 1  | 1  | 1  | 1  |
-| Q2-FY22-23      | 18             | 0  | 1  | 1  | 1  |
-| Q3-FY22-23      | 12             | 0  | 0  | 1  | 1  |
-| Q4-FY22-23      | 6              | 0  | 0  | 0  | 1  |
-
+- Testing feature accuracies 🟨
+  - ```testcase1.xlsx``` assumes all loans are unique (using unique itemcodes for each). 🟩
+  - Test *clumping*, i.e., the same loanee making multiple deposits on the same loan. 🟨
+  - Test loans per quarter calculations 🟩
+  - Test a large dataset with known vintage analysis 🟥
+    OR
+  - Perform vintage analysis on the existing sample manually and cross check. 🟥 
 
 # DPD-Dashboard User Guide
 
