@@ -55,10 +55,10 @@ In simple terms, vintage analysis measures the performance of a portfolio in dif
 The table should look like the following:
 | Disburse Period | Number of Loans | Q1 | Q2 | Q3 | Q4 |
 |-----------------|-----------------|----|----|----|----|
-| Q1-FY22-23      | 4106            | 11 | 84 | 158| 173|
-| Q2-FY22-23      | 4660            | 0  | 44 | 173| 227|
-| Q3-FY22-23      | 3067            | 0  | 0  | 55 | 149|
-| Q4-FY22-23      | 1176            | 0  | 0  | 0  | 76 |
+| Q1-FY22-23      | 9999            | 22 | 33 | 44 | 55 |
+| Q2-FY22-23      | 8888            | 0  | 66 | 77 | 88 |
+| Q3-FY22-23      | 7777            | 0  | 0  | 99 | 111|
+| Q4-FY22-23      | 6666            | 0  | 0  | 0  | 222|
 
 **Number of Loans** indicate the *total* number of loans disbursed in that period.
 
