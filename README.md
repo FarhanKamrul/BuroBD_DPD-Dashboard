@@ -1,22 +1,27 @@
 ## Progress Report
-Done:
-- WebApp development complete.
-- User Guide created
 
-Work Due:
-- Develop and Run test cases
-- Fix logical inaccuracies if any.
+🟩 - Complete
+🟨 - Under Process
+🟥 - Not started
 
-Points of contention:
-- Please check out the logic for calculating the ending DPD per user per quarter.
+- WebApp development complete. 🟩
+- User Guide created. 🟩
+- Logical inaccuracies handled according to feedback, needs review. 🟨
+- Test Cases 🟨
 
-# Buro BD DPD-Dashboard User Guide
+
+# DPD-Dashboard User Guide
 
 ## Introduction
-Welcome to the Buro BD DPD-Dashboard! This web application provides insights into the Disbursement and Due Past Date (DPD) for loans. Use this guide to navigate through the features and functionalities of the dashboard.
+This dashboard was constructed to automate the vintage analysis process for BURO Bangladesh. 
+
+Vintage analysis, also known as cohort analysis, is a method used in credit risk management to evaluate the credit quality of a loan portfolio. The term 'Vintage' refers to the month or quarter in which an account was opened or a loan was granted.
+
+In simple terms, vintage analysis measures the performance of a portfolio in different periods of time after the loan (or credit card) was granted. Performance can be measured in various ways, such as the cumulative charge-off rate, proportion of customers 30/60/90 days past due (DPD), utilization ratio, average balance, etc.
 
 ## Getting Started
-1. **Start the Dashboard:**
+1. **Download** the repository. Download the ```.streamlit``` file to the app root to enable custome theme. 
+2. **Start the Dashboard:**
     - **WSL (Windows Subsystem for Linux):**
         ```bash
         streamlit run path/to/your/app/dpd_dashboard.py
@@ -25,7 +30,7 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
         ```bash
         streamlit run path/to/your/app/dpd_dashboard.py
         ```
-2. **Access the Dashboard**: Paste the generated Local or Network URL on the browser address bar.
+3. **Access the Dashboard**: Paste the generated Local or Network URL on the browser address bar.
 4. **Select DPD Filter Value:** On the sidebar, choose the DPD filter value from the radio buttons. You can select from 7, 15, 30, 60, or 90 days.
 
 ## Dashboard Sections
@@ -44,7 +49,6 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
         ```python
         df = pd.read_excel("path/to/your/data/file.xlsx")
         ```
-
 2. **Understand Disbursement and Due Quarters:**
    - Disbursement Quarter: Represents the quarter in which the loan was disbursed.
    - Due Quarter: Represents the quarter in which the payment is due.
@@ -65,6 +69,3 @@ Welcome to the Buro BD DPD-Dashboard! This web application provides insights int
 ## Additional Notes
 - The data is processed and visualized dynamically based on the selected DPD filter value.
 - Ensure the data file path is correctly specified for accurate results.
-
-Thank you for using the Buro BD DPD-Dashboard!
-
