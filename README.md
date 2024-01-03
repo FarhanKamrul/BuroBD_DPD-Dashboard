@@ -44,19 +44,27 @@ In simple terms, vintage analysis measures the performance of a portfolio in dif
 - **Visualization:** A table with columns representing quarters (Q1 to Q4) and rows indicating the count of loans with DPD values above the selected threshold.
 
 ## Using the Dashboard
-1. **Read the Data:** The data is loaded from the "DPD_Sample.xlsx" file. To use a different file, modify the file path in the script.
+
+**Read the Data:** The data is loaded from the "DPD_Sample.xlsx" file. To use a different file, modify the file path in the script.
     - Example:
         ```python
         df = pd.read_excel("path/to/your/data/file.xlsx")
         ```
-2. **Understand Disbursement and Due Quarters:**
-   - Disbursement Quarter: Represents the quarter in which the loan was disbursed.
-   - Due Quarter: Represents the quarter in which the payment is due.
+The table should look like the following:
+| Disburse Period | Number of Loans | Q1 | Q2 | Q3 | Q4 |
+|-----------------|-----------------|----|----|----|----|
+| Q1-FY22-23      | 4106            | 11 | 84 | 158| 173|
+| Q2-FY22-23      | 4660            | 0  | 44 | 173| 227|
+| Q3-FY22-23      | 3067            | 0  | 0  | 55 | 149|
+| Q4-FY22-23      | 1176            | 0  | 0  | 0  | 76 |
 
-3. **Interpret DPD Values:**
-   - DPD (Days Past Due): Indicates the number of days a payment is overdue.
+**Number of Loans** indicate the *total* number of loans disbursed in that period.
 
-4. **Filter DPD Data:**
+**DPD (Days Past Due)** indicate the number of days a payment is overdue.
+
+**Q1, Q2, Q3 and Q4** columns indicate the number of loans that exceed the threshold DPD value due in that quarter. The corresponding rows indicate the period in which those loans were disbursed.
+
+**Filter DPD Data:**
    - Use the sidebar to choose the DPD filter value. This value determines the threshold for considering loans in the DPD analysis.
 
 ## Example Usage
