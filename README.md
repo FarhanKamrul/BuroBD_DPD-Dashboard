@@ -13,6 +13,7 @@
   - Test *clumping*, i.e., the same loanee making multiple deposits on the same loan. 🟨
   - Test loans per quarter calculations 🟩
   - Test a large dataset with known vintage analysis 🟥
+
     OR
   - Perform vintage analysis on the existing sample manually and cross check. 🟨
     - Manual count of totals *after* clumping is done matches. 🟩
