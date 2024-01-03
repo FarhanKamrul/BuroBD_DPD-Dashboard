@@ -94,7 +94,7 @@ def drop_duplicates(df):
     return df.drop_duplicates(subset=['UID', 'DueQuarter'], keep='last')
 
 def create_visualization_df():
-    return pd.DataFrame({"DisbursePeriod": ["Q1-FY22-23", "Q2-FY22-23", "Q3-FY22-23", "Q4-FY22-23"]})
+    return pd.DataFrame({"Disburse Period": ["Q1-FY22-23", "Q2-FY22-23", "Q3-FY22-23", "Q4-FY22-23"]})
 
 def calculate_loans_per_quarter(df1, df2):
     Q1, Q2, Q3, Q4 = 0, 0, 0, 0
@@ -109,7 +109,7 @@ def calculate_loans_per_quarter(df1, df2):
         else:
             Q4 += 1
 
-    df2['NumberOfLoans'] = [Q1, Q2, Q3, Q4]
+    df2['Number of Loans'] = [Q1, Q2, Q3, Q4]
     return df2
 
 
@@ -170,28 +170,34 @@ def main():
         page_icon = ":chart_increasing:",
         layout = "wide",
     )
-
-    st.title("Vintage Analysis Dashboard FY22-23")
+    st.title(":gray[Vintage Analysis Dashboard FY22-23] :chart_with_upwards_trend: :dollar:")
 
     # Loading the Dataset
     file_path = 'DPD_Sample.xlsx'
     df = load_and_preprocess_data(file_path)
 
-    # Setting up sidebar
-    st.sidebar.header("Filter")
-    options = ['7+ DPD', '15+ DPD', '30+ DPD', '60+ DPD', '90+ DPD']
-    number_mapping = {option: int(option.split('+')[0].strip()) for option in options}
-    selected_option = st.sidebar.radio("Select a filter:", options)
-    # Initialize visualDf
-    visual_df = create_visualization_df()
-    visual_df = calculate_loans_per_quarter(df, visual_df)
+    # Setting up columns
+    col1, col2 = st.columns([1,3]) # Adjust the ratio as needed
 
-    #Make it faster by making streamlit only rerun this part?
-    filterVal = number_mapping[selected_option]
-    # Calculate and print the visual DataFrame
-    visual_df = dpdPerQuarter(visual_df, df, filterVal)
+    # Put the radio buttons in the first column
+    with col1:
+        options = ['7+ DPD', '15+ DPD', '30+ DPD', '60+ DPD', '90+ DPD']
+        number_mapping = {option: int(option.split('+')[0].strip()) for option in options}
+        selected_option = st.radio("DPD Value", options)
 
-    st.dataframe(visual_df, hide_index=True)
+    # Put the rest of the dashboard in the second column
+    with col2:
+        # Initialize visualDf
+        visual_df = create_visualization_df()
+        visual_df = calculate_loans_per_quarter(df, visual_df)
+
+        #Make it faster by making streamlit only rerun this part?
+        filterVal = number_mapping[selected_option]
+        # Calculate and print the visual DataFrame
+        visual_df = dpdPerQuarter(visual_df, df, filterVal)
+
+        st.dataframe(visual_df, hide_index=True)
+
 
 if __name__ == "__main__":
     main()
