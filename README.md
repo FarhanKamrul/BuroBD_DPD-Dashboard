@@ -7,7 +7,7 @@
 - WebApp development complete. 🟩
 - User Guide created. 🟩
 - Logical inaccuracies handled according to feedback, needs review. 🟨
-- Test Cases 🟨
+- Test Cases 🟩
 
 
 # DPD-Dashboard User Guide
