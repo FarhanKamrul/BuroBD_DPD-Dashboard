@@ -50,6 +50,8 @@ In simple terms, vintage analysis measures the performance of a portfolio in dif
         ```python
         df = pd.read_excel("path/to/your/data/file.xlsx")
         ```
+**Filter DPD Data:** Use the sidebar to choose the DPD filter value. This value determines the threshold for considering loans in the DPD analysis.
+
 The table should look like the following:
 | Disburse Period | Number of Loans | Q1 | Q2 | Q3 | Q4 |
 |-----------------|-----------------|----|----|----|----|
@@ -64,8 +66,7 @@ The table should look like the following:
 
 **Q1, Q2, Q3 and Q4** columns indicate the number of loans that exceed the threshold DPD value due in that quarter. The corresponding rows indicate the period in which those loans were disbursed.
 
-**Filter DPD Data:**
-   - Use the sidebar to choose the DPD filter value. This value determines the threshold for considering loans in the DPD analysis.
+**Filter DPD Data:** Use the sidebar to choose the DPD filter value. This value determines the threshold for considering loans in the DPD analysis.
 
 ## Example Usage
 1. Open the terminal in WSL or Mac.
