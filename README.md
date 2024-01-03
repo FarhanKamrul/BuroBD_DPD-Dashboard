@@ -20,7 +20,7 @@ Vintage analysis, also known as cohort analysis, is a method used in credit risk
 In simple terms, vintage analysis measures the performance of a portfolio in different periods of time after the loan (or credit card) was granted. Performance can be measured in various ways, such as the cumulative charge-off rate, proportion of customers 30/60/90 days past due (DPD), utilization ratio, average balance, etc.
 
 ## Getting Started
-1. **Download** the repository. Download the ```.streamlit``` file to the app root to enable custome theme. 
+1. **Download** the repository. Download the ```.streamlit``` file to the app root to enable custome themes. 
 2. **Start the Dashboard:**
     - **WSL (Windows Subsystem for Linux):**
         ```bash
