@@ -167,10 +167,10 @@ def main():
     # Set up streamlit dashboard page
     st.set_page_config(
         page_title = "Vintage Analysis Dashboard FY22-23",
-        page_icon = ":chart_increasing:",
+        page_icon = ":chart_with_upwards_trend:",
         layout = "wide",
     )
-    st.title(":gray[Vintage Analysis Dashboard FY22-23] :chart_with_upwards_trend: :dollar:")
+    st.title(":gray[Vintage Analysis Dashboard FY22-23] :chart_with_upwards_trend:")
 
     # Loading the Dataset
     file_path = 'DPD_Sample.xlsx'
