@@ -14,7 +14,9 @@
   - Test loans per quarter calculations 🟩
   - Test a large dataset with known vintage analysis 🟥
     OR
-  - Perform vintage analysis on the existing sample manually and cross check. 🟥 
+  - Perform vintage analysis on the existing sample manually and cross check. 🟨
+    - Manual count of totals *after* clumping is done matches. 🟩
+    - Now check if the clumping logic is correct. 🟨
 
 # DPD-Dashboard User Guide
 
