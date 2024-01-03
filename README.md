@@ -9,6 +9,15 @@
 - Logical inaccuracies handled according to feedback, needs review. 🟨
 - Test Cases 🟩
 
+Running the ```testcase1.xlsx``` should render the following table.
+
+| Disburse Period | Number of Loans | Q1 | Q2 | Q3 | Q4 |
+|-----------------|-----------------|----|----|----|----|
+| Q1-FY22-23      | 24             | 1  | 1  | 1  | 1  |
+| Q2-FY22-23      | 18             | 0  | 1  | 1  | 1  |
+| Q3-FY22-23      | 12             | 0  | 0  | 1  | 1  |
+| Q4-FY22-23      | 6              | 0  | 0  | 0  | 1  |
+
 
 # DPD-Dashboard User Guide
 
