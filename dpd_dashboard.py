@@ -1,49 +1,34 @@
 #!/usr/bin/env python3
 
 '''
-The dataset (excel) is formatted as follows:
+This Streamlit app is designed to perform a detailed analysis of vintage data extracted from a loan dataset, structured as an Excel file. The dataset comprises various columns such as BranchCode, LoaneeNo, ItemCode, LoanTerm, DisburseDate, ReportDate, RealizableDate, RealizedDate, RealizableAmt, RealizedAmt, PaymentFrequency, and DPD (Days Past Due).
 
-| BranchCode | LoaneeNo | ItemCode | LoanTerm | DisburseDate | ReportDate | RealizableDate | RealizedDate | RealizableAmt | RealizedAmt | PaymentFrequency | DPD |
-|------------|----------|----------|----------|--------------|------------|----------------|--------------|---------------|-------------|------------------|-----|
+## Objective:
+The primary goal of the app is to generate a new table showcasing the number of loans disbursed in each quarter of the Fiscal Year 2022-23 (Q1-FY22-23 to Q4-FY22-23). Additionally, the app calculates the count of loans with Days Past Due (DPD) exceeding specific thresholds (7+, 15+, 30+, 60+, 90+ DPD).
 
+## Algorithm (High-level):
+1. Convert date columns (DisburseDate, ReportDate, RealizableDate, RealizedDate) to datetime format.
+2. Filter data to include only entries within the 2022-23 Fiscal Year (July 1, 2022, to June 30, 2023).
+3. Assign a Unique Loanee ID (UID) by concatenating LoaneeNo, Itemcode, and LoanTerm.
+4. Retain only the last transaction for each UID at the end of each quarter; discard the rest.
+5. Create a new DataFrame summarizing the number of loans disbursed in each quarter.
 
-We ought to create another table that looks like (the values are simply placeholders):
+## Visualization:
+The app presents radio buttons for selecting DPD thresholds (7+, 15+, 30+, 60+, 90+ DPD). The resulting table displays the number of loans disbursed in each quarter along with the count of loans exceeding the chosen DPD threshold.
 
-| DisbursePeriod | NumberOfLoans | Q1 | Q2 | Q3 | Q4 |
-|----------------|---------------|----|----|----|----|
-| Q1-FY22-23     | 5194          | 28 | 0  | 0  | 0  |
-| Q2-FY22-23     | 36802         | 0  | 1  | 14 | 45 |
-| Q3-FY22-23     | 40857         | 0  | 0  | 6  | 35 |
-| Q4-FY22-23     | 23628         | 0  | 0  | 0  | 3  |
-
-**The values are placeholders.
-
-Required buttons: 7+ DPD, 15+ DPD, 30+ DPD, 60+ DPD, 90+ DPD
-
-
-The idea is to calculate how many loans disbursed in Q(1-4)-FY22-23 are still due at the end of Q1, Q2, Q3, Q4 of the same fiscal year
-
-
-Algorithm (high level):
-- Convert | DisburseDate | ReportDate | RealizableDate | RealizedDate | to datetime() format
-- Drop all entries not in the 2022-23 Fiscal Year (July 1, 2022 to June 30, 2023)
-- Assign a UID (Unique Loanee ID) by concatenating LoaneeNo, Itemcode and LoanTerm.
-- For each UID, only keep the last transaction at the end of each quarters. Drop the rest.
-- Create a new dataframe that looks like the following: 
-| DisbursePeriod | NumberOfLoans |
-| Q1-FY22-23     | |
-| Q2-FY22-23     | |
-| Q3-FY22-23     | |
-| Q4-FY22-23     | |
-
-**Number of loans indicate number of loans disbursed in that period. 
-- Ask for a DPD value
-- Print the table after calculations
+## Required Buttons:
+- 7+ DPD
+- 15+ DPD
+- 30+ DPD
+- 60+ DPD
+- 90+ DPD
 
 '''
+
 import pandas as pd
 import streamlit as st
 
+@st.cache_data
 def load_data(file_path):
     # Load your data
     df = pd.read_excel(file_path)
@@ -87,15 +72,17 @@ def assign_quarter(date):
 
 def add_quarters(df):
     df['DisburseQuarter'] = df['DisburseDate'].apply(assign_quarter)
-    df['DueQuarter'] = df['ReportDate'].apply(assign_quarter)
+    df['DueQuarter'] = df[['ReportDate', 'RealizableDate']].max(axis=1).apply(assign_quarter)
     return df
 
 def drop_duplicates(df):
     return df.drop_duplicates(subset=['UID', 'DueQuarter'], keep='last')
 
+@st.cache_data
 def create_visualization_df():
     return pd.DataFrame({"Disburse Period": ["Q1-FY22-23", "Q2-FY22-23", "Q3-FY22-23", "Q4-FY22-23"]})
 
+@st.cache_data
 def calculate_loans_per_quarter(df1, df2):
     Q1, Q2, Q3, Q4 = 0, 0, 0, 0
 
@@ -112,7 +99,7 @@ def calculate_loans_per_quarter(df1, df2):
     df2['Number of Loans'] = [Q1, Q2, Q3, Q4]
     return df2
 
-
+@st.cache_data
 def dpdPerQuarter(visualDf, df2, filterVal):
     Q1_1 = 0
     Q1_2 = 0
@@ -154,6 +141,7 @@ def dpdPerQuarter(visualDf, df2, filterVal):
     visualDf['Q4'] = [Q1_4, Q2_4, Q3_4, Q4_4]
     return visualDf
 
+@st.cache_data
 def load_and_preprocess_data(file_path):
     df = load_data(file_path)
     df = filter_fiscal_year(df)
@@ -202,5 +190,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
